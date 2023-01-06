@@ -1,0 +1,45 @@
+.components{
+    .components-placeholder{
+        display: grid;
+        grid-template-columns: auto auto;
+        gap: 10px 20px;
+        .banner{
+            background-size: 90%;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 80px;
+            width: 100%;
+            padding: 5px;
+            border: 1px dashed #ccc;
+            border-radius: 5px;
+        }
+        .combo{
+            display: flex;
+            align-items: center;
+            button{
+                margin-right: 10px;
+            }
+            img{
+                width: 50px;
+                margin-right: 10px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+            }
+        }
+        .custom-text-input{
+            button{
+                width: 30px;
+                text-align: center;
+                display: inline-block;
+                background: #fff;
+                border-radius: 5px;
+                border: 1px solid #808080;
+                outline: none;
+                &.active{
+                    background: #000;
+                    color: #fff;
+                }
+            }
+        }
+    }
+}
