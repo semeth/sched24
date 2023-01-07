@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php echo ($title) ? $title : 'Sched24'; ?></title>
+    <title><?php echo (isset($title)) ? $title : 'Sched24'; ?></title>
 
     <link rel="stylesheet" href="<?php echo base_url('assets/css/bootstrap.min.css'); ?>">
     <link rel="stylesheet" href="<?php echo base_url('assets/css/fontawesome.css'); ?>">
@@ -50,16 +50,18 @@
                                 <span>Dashboard</span>
                             </a>
                         </li>
-                        <li class="sidebar-dropdown">
+                        <li class="sidebar-dropdown <?php echo ($this->router->fetch_class() == 'firm') ? 'active' : ''; ?>">
                             <a href="#">
                                 <i class="fa fa-briefcase"></i>
-                                <span>Workspace</span>
+                                <span>Firm</span>
                             </a>
-                            <div class="sidebar-submenu">
+                            <div class="sidebar-submenu" <?php echo ($this->router->fetch_class() == 'firm') ? 'style="display: block;"' : ''; ?>>
                                 <ul>
-                                    <li><a href="<?php echo base_url('templates/create'); ?>">New Template</a></li>
-                                    <li><a href="<?php echo base_url('templates/schedule'); ?>">Schedule</a></li>
-                                    <li><a href="<?php echo base_url('data/export'); ?>">Export Data</a></li>
+                                    <li><a href="<?php echo base_url('firm'); ?>">Dashboard</a></li>
+                                    <li><a href="<?php echo base_url('firm/employees'); ?>">Employees</a></li>
+                                    <li><a href="<?php echo base_url('firm/calendar'); ?>">Calendar</a></li>
+                                    <li><a href="<?php echo base_url('firm/schedules'); ?>">Schedules</a></li>
+                                    <li><a href="<?php echo base_url('firm/clients'); ?>">Clients</a></li>
                                 </ul>
                             </div>
                         </li>
